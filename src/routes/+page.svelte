@@ -3,7 +3,7 @@
 	import '../styles.css';
 	import Modal from './Modal.svelte';
 	import { levels } from './levels';
-	import { confetti } from '@neoconfetti/svelte'
+	import { confetti } from '@neoconfetti/svelte';
 
 	let state: 'waiting' | 'playing' | 'paused' | 'won' | 'lost' = 'waiting';
 
@@ -59,12 +59,13 @@
 {/if}
 
 {#if state === 'won'}
-	<div class="confetti" use:confetti={{
-		stageHeight:innerHeight,
-		stageWidth: innerWidth
-	}}>
-
-	</div>
+	<div
+		class="confetti"
+		use:confetti={{
+			stageHeight: innerHeight,
+			stageWidth: innerWidth
+		}}
+	></div>
 {/if}
 
 <style>

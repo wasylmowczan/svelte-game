@@ -59,7 +59,7 @@
 			remaining = remaining_at_start - (Date.now() - start);
 
 			if (remaining <= 0) {
-				dispatch('lose')
+				dispatch('lose');
 				playing = false;
 			}
 		}
@@ -72,7 +72,7 @@
 		{#if playing}
 			<Countdown
 				{remaining}
-				duration={duration}
+				{duration}
 				on:click={() => {
 					playing = false;
 					dispatch('pause');
@@ -88,7 +88,7 @@
 				found = [...found, e.detail.emoji];
 
 				if (found.length === (size * size) / 2) {
-					dispatch('win')
+					dispatch('win');
 				}
 			}}
 			{found}
